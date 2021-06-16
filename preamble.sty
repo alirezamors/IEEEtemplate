@@ -1,0 +1,69 @@
+% \normalsize
+% \usepackage{pdfsync}
+\synctex=1
+\makeatletter
+\def\endthebibliography{%
+	\def\@noitemerr{\@latex@warning{Empty `thebibliography' environment}}%
+	\endlist
+}
+\makeatother
+
+% Extra Packages IEEE
+\usepackage[noadjust]{cite}
+\ifCLASSINFOpdf
+  \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  \graphicspath{{pdf/}{jpg/}{png/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+\usepackage{amsmath}
+\usepackage{cases}
+\usepackage{array}
+\usepackage{stfloats}
+\fnbelowfloat
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+% Packages from the repo: https://github.com/lrenaud/IEEEtemplate
+\usepackage{gensymb} % for \degree, etc.
+\usepackage{xspace} % to fix \degree eating a space
+% Redefine \degree to not eat a space based upon the \xspace package
+\AtBeginDocument{%
+	\let\OLDdegree\degree%
+	\renewcommand{\degree}{\OLDdegree{}\xspace}%
+}
+\usepackage{xcolor} % for inkscape figures
+% This handles warnings related to using the \input command on PDFs generated
+% by inkscape's SVG->TEX conversion tool.
+\pdfsuppresswarningpagegroup=1
+% My mangled attempt at figuring out how to make footnotes place nicely with
+% tables.
+\usepackage{footnote}
+\makesavenoteenv{tabular}
+\makesavenoteenv{table}
+
+
+% Packeges
+\graphicspath{{Figures/}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+
+% \DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
+% \DeclareMathOperator*{\argminA}{arg\,min} % Jan Hlavacek
+% \DeclareMathOperator*{\argmaxA}{arg\,max} % Jan Hlavacek
+% \def \pro{\text{proj}_{\mathbb{U}} }
+% \def \I{\mathbf{I}}

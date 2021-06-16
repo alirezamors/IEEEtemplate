@@ -11,26 +11,13 @@
 %% http://www.ctan.org/pkg/ieeetran
 %% and
 %% http://www.ieee.org/
+%% forked from
+%% https://github.com/lrenaud/IEEEtemplate
 
-\documentclass[journal]{IEEEtran}
+\documentclass[10pt,journal,compsoc]{IEEEtran}
+\usepackage{preamble}
 
-% If IEEEtran.cls has not been installed into the LaTeX system files,
-% manually specify the path to it like:
-% \documentclass[journal]{../sty/IEEEtran}
-%\usepackage[showframe]{geometry}
-%LPR: This chunk corrects a nasty bug in the IEEEtran biblography section.
-\makeatletter
-\def\endthebibliography{%
-	\def\@noitemerr{\@latex@warning{Empty `thebibliography' environment}}%
-	\endlist
-}
-\makeatother
-
-%LPR: Insert the core extra packages.
-%LPR: Uncomment parts of that file based upon your needs.
-\input{sections/000-extrapackages-ieee}
-%LPR: Extra packages YOU want to inclue go in this guy
-\input{sections/000-extrapackages-local}
+% \input{sections/000-extrapackages-local}
 % For the helper macros used to control markup while editing.
 \input{sections/000-draft_files}
 
@@ -261,3 +248,8 @@ The authors would like to thank...
 % that's all folks
 \end{document}
 
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
